@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/tailwind.css">
+    <script src="https://kit.fontawesome.com/6fd3995802.js" crossorigin="anonymous"></script>
+</head>
+<body class="font-default">
+    <!-- Header -->
+    <header class="fixed w-screen bg-gradient-to-b from-gray-700 to-transparent transition duration-300 z-50" id="navBar">
+        <div>
+            <div
+                class="flex justify-between items-center md:justify-start px-5 py-5 sm:py-0 md:px-10 md:space-x-10">
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <a href="#" class="text-2xl uppercase font-bold text-white">
+                        Logo
+                    </a>
+                </div>
+                <div class="-mr-2 -my-2 md:hidden">
+                    <button id="openMenu" type="button"
+                        class="rounded-md p-1 inline-flex items-center justify-center text-gray-200 focus:outline-none"
+                        aria-expanded="false">
+                        <span class="sr-only">Open menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                <nav class="hidden md:flex space-x-10">
+                    <a href="index.html" id="nav1" class="text-lg py-5 text-white hover:text-gray-200" onclick="navBar()">
+                        Home
+                    </a>
+                    <a href="#" id="nav4" class="text-lg py-5 text-white hover:text-gray-200" onclick="navBar()">
+                        About
+                    </a>
+                    <a href="product.html" id="nav2" class="text-lg py-5 text-white hover:text-gray-200" onclick="navBar()">
+                        Products
+                    </a>
+                </nav>
+                <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right hidden md:hidden z-50">
+            <div class="rounded-lg shadow-lg ring-1 ring-gray-800 ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                <div class="pt-5 pb-6 px-5">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                                alt="Workflow">
+                        </div>
+                        <div class="-mr-2">
+                            <button id="closeMenu" type="button"
+                                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                <span class="sr-only">Close menu</span>
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <nav class="grid gap-y-8">
+                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                                <span class="ml-3 text-base text-gray-900">
+                                    Analytics
+                                </span>
+                            </a>
+
+                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                                </svg>
+                                <span class="ml-3 text-base text-gray-900">
+                                    Engagement
+                                </span>
+                            </a>
+
+                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <span class="ml-3 text-base text-gray-900">
+                                    Security
+                                </span>
+                            </a>
+
+                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                </svg>
+                                <span class="ml-3 text-base text-gray-900">
+                                    Integrations
+                                </span>
+                            </a>
+
+                            <a href="#" class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+                                <svg class="flex-shrink-0 h-6 w-6 text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                                <span class="ml-3 text-base text-gray-900">
+                                    Automations
+                                </span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="py-6 px-5 space-y-6">
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+                        <a href="#" class="text-base text-gray-900 hover:text-gray-700">
+                            Pricing
+                        </a>
+
+                        <a href="#" class="text-base text-gray-900 hover:text-gray-700">
+                            Docs
+                        </a>
+
+                        <a href="#" class="text-base text-gray-900 hover:text-gray-700">
+                            Help Center
+                        </a>
+
+                        <a href="#" class="text-base text-gray-900 hover:text-gray-700">
+                            Guides
+                        </a>
+
+                        <a href="#" class="text-base text-gray-900 hover:text-gray-700">
+                            Events
+                        </a>
+
+                        <a href="#" class="text-base text-gray-900 hover:text-gray-700">
+                            Security
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#"
+                            class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base text-white bg-indigo-600 hover:bg-indigo-700">
+                            Sign up
+                        </a>
+                        <p class="mt-6 text-center text-base text-white">
+                            Existing customer?
+                            <a href="#" class="text-indigo-600 hover:text-indigo-500">
+                                Sign in
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Content -->
+    <div class="">
+        <div class="h-screen">
+            <div class="flex h-3/4 relative text-center mb-10 shadow-xl">
+                <img class="w-screen object-cover" src="../public/img/panoramic-view-roys-peak-new-zealand-with-low-mountains-distance-cloudscape.jpg" alt="">
+                <div class="absolute bottom-0 pb-10 bg-gradient-to-t from-gray-900 to-transparent w-full text-center">
+                    <h1 class="text-white text-5xl mb-32 md:mb-36 md:text-8xl">
+                        RDeveloper
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="text-center -mt-32 mb-32">
+            <div class="my-2 md:my-10 mx-5 md:mx-20">
+                <div class="my-auto text-center md:text-left">
+                    <h1 class="text-xl md:text-8xl my-10 md:my-0 mb-5 font-bold">About Us</h1>
+                    <p class="my-10">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate eveniet porro aspernatur nam, quaerat fuga quia, vero neque reprehenderit necessitatibus quas molestiae possimus accusamus provident quae! Corrupti nostrum molestiae perferendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi deleniti quod natus alias consequuntur fugit beatae laboriosam modi! Nisi eius fugiat temporibus atque reprehenderit culpa mollitia molestias in quo itaque?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mb-52">
+            <div class="md:flex">
+                <div class="w-full md:w-1/2 grid grid-cols-2 grid-rows-2">
+                    <div class="row-span-2 relative">
+                        <img class="h-full w-full filter grayscale contrast-50 object-cover" src="../public/img/picture-brunette-female-taking-selfie-with-beautiful-smile.jpg" alt="">
+                        <div class="absolute bottom-0 h-full w-full">
+                            <div class="bg-gray-800 h-full w-full opacity-40"></div>
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 py-5 text-white">
+                                <h1>Ricko Tiaka</h1>
+                                <div class="italic text-xs">
+                                    Founder of RDeveloper, Full-Stack Developer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img class="h-full w-full filter grayscale contrast-50 object-cover" src="../public/img/thinking-woman-look-copy-space-isolated-grey-background-with-finger-face-asian-beauty.jpg" alt="">
+                        <div class="absolute bottom-0 h-full w-full">
+                            <div class="bg-gray-800 h-full w-full opacity-40"></div>
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 py-5 text-white">
+                                <h1>Jane Doe</h1>
+                                <div class="italic text-xs">
+                                    CEO of RDeveloper, Back-End Developer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img class="h-full w-full filter grayscale contrast-50 object-cover" src="../public/img/young-asian-healthy-woman-sportswear-workout-home-exercise-fit-doing-yoga-home-sport-fitness-concept.jpg" alt="">
+                        <div class="absolute bottom-0 h-full w-full">
+                            <div class="bg-gray-800 h-full w-full opacity-40"></div>
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 py-5 text-white">
+                                <h1>Jane Doe</h1>
+                                <div class="italic text-xs">
+                                    Front-End Developer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:mx-16 my-10 md:my-auto text-center md:text-left">
+                    <h1 class="text-5xl mb-5 font-bold">Our Team</h1>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi numquam incidunt, nobis sapiente ratione at perferendis maiores cum. Id soluta placeat repudiandae maxime ratione pariatur amet perferendis recusandae consequuntur repellat?
+                </div>
+            </div>
+        </div>
+        <div class="text-center my-10 bg-gray-100">
+            <div class="md:flex">
+                <div class="w-full md:w-1/4 md:mx-16 my-auto text-center md:text-left">
+                    <h1 class="text-5xl mb-5 font-bold">Partners</h1>
+                    <p>and more 30+ Company being our Partners</p>
+                </div>
+                <div class="w-full md:w-3/4 grid grid-cols-3">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/143-1438265_15-black-apple-logo-transparent-background-free-background.png">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/Google__G__Logo.svg.png">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/path4979.png">
+                </div>
+            </div>
+        </div>
+        <div class="text-center my-10 bg-gray-100">
+            <div class="md:flex flex-col-reverse md:flex-row">
+                <div class="w-full md:w-1/4 md:mx-16 my-auto text-center md:text-left">
+                    <h1 class="text-5xl mb-5 font-bold">Costumers</h1>
+                    <p>and more 120+ Company being our Costumers</p>
+                </div>
+                <div class="w-full md:w-3/4 grid grid-cols-3 xl:grid-cols-6 ">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/143-1438265_15-black-apple-logo-transparent-background-free-background.png">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/Google__G__Logo.svg.png">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/path4979.png">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/143-1438265_15-black-apple-logo-transparent-background-free-background.png">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/Google__G__Logo.svg.png">
+                    <img class="h-28 w-28 md:h-40 md:w-40 p-5 md:p-10 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100" src="../public/img/path4979.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Content -->
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 px-10 py-5 text-white">
+        <div class="grid grid-cols-2 md:grid-cols-6 border-b-2 gap-y-10 md:gap-y-0 md:gap-x-10  border-gray-600 pb-10">
+            <div class="text-lg font-light">
+                <h1 class="mb-4 font-medium uppercase">Solutions</h1>
+                <ul class="list-none text-gray-300">
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Marketing</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Analytics</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Commerce</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Insights</li>
+                </ul>
+            </div>
+            <div class="text-lg font-light">
+                <h1 class="mb-4 font-medium uppercase">Company</h1>
+                <ul class="list-none text-gray-300">
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">About</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Blog</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Careers</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Clients</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Partners</li>
+                </ul>
+            </div>
+            <div class="text-lg font-light">
+                <h1 class="mb-4 font-medium uppercase">Support</h1>
+                <ul class="list-none text-gray-300">
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Pricing</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Documentation</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Guides</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">API Product</li>
+                </ul>
+            </div>
+            <div class="text-lg font-light">
+                <h1 class="mb-4 font-medium uppercase">Legal</h1>
+                <ul class="list-none text-gray-300">
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Claim</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Privacy</li>
+                    <li class="my-1 hover:text-gray-50 cursor-pointer">Terms</li>
+                </ul>
+            </div>
+            <div class="col-span-2 text-lg font-light">
+                <h1 class="mb-4 font-medium uppercase">Subscribe to our Newsletter</h1>
+                <p class="text-sm text-gray-300 my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum sit soluta accusamus dolores est quisquam voluptatum magni nobis</p>
+                <form>
+                    <input class="border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-4 py-1 text-gray-800 mr-1" placeholder="Your Email">
+                    <button class="bg-gray-600 hover:bg-pink-500 text-white rounded-xl focus:outline-none focus:ring-2 px-2 py-1 mt-2 sm:mt-0">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center md:text-left my-2">
+            <span class="text-sm mr-1">Made with <i class="text-red-600 fas fa-heart"></i> by <a href="https://www.instagram.com/ricko.tiaka/" target="_blank">ricko.tiaka</a></span>
+            <div class="md:float-right">
+                <button>
+                    <img class="w-7 h-7 mx-1" src="https://img.icons8.com/ios-filled/500/ffffff/facebook-new.png" />
+                </button>
+                <button>
+                    <img class="w-7 h-7 mx-1"
+                         src="https://img.icons8.com/material-outlined/480/ffffff/instagram-new--v1.png" />
+                </button>
+                <button>
+                    <img class="w-7 h-7 mx-1" src="https://img.icons8.com/material-outlined/480/ffffff/globe--v2.png" />
+                </button>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+</body>
+</html>

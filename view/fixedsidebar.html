@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/tailwind.css">
+    <script src="https://kit.fontawesome.com/6fd3995802.js" crossorigin="anonymous"></script>
+    <script src="../public/js/chartsjs/chart.js"></script>
+</head>
+<body class="font-default">
+<!-- Header -->
+<div class="flex w-full">
+    <div id="mobile-menu"
+         class="fixed h-full text-gray-800 z-10 fixed w-0 md:w-11 lg:w-80 lg:hover:w-80 duration-300 ease-in-out bg-gray-100 shadow-md overflow-hidden md:overflow-none">
+        <div class="font-bold text-xl h-16 pr-2 md:pr-0 overflow-hidden truncate flex">
+            <img class="min-h-5 h-5 mx-3 my-auto" src="../public/img/path4979.png" alt="">
+            <span class="ml-4 my-auto text-2xl align-middle font-light">
+                    RDeveloper
+            </span>
+            <button onclick="CloseBar()" type="button" class="mx-auto md:hidden">
+                <!-- Heroicon name: outline/x -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="text-lg font-normal tracking-tight">
+            <ul class="py-5 px-1 py-2">
+                <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
+                    <a href="dashboard.html">
+                        <div class="bg-gray-300 hover:bg-gray-200 px-2 pt-1 rounded-lg">
+                            <i class="fas fa-columns mr-3"></i><span>Dashboard</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
+                    <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 w-auto px-2 pt-1 rounded-lg">
+                        <i class="fas fa-desktop mr-3"></i>
+                        <div class="inline-block w-3/4">Layout</div>
+                        <span class="overflow-hidden">
+                            <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
+                        </span>
+                    </div>
+                    <ul class="hidden bg-gray-200 rounded-lg px-2.5 my-2 h-full truncate">
+                        <a href="boxed.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span class="">Boxed</span></li>
+                        </a>
+                        <a href="fixednavbar.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Fixed Navbar</span></li>
+                        </a>
+                        <a href="fixedsidebar.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Fixed Sidebar</span></li>
+                        </a>
+                        <a href="fixednavsidebar.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Fixed Sidebar + Navbar</span></li>
+                        </a>
+                    </ul>
+                </li>
+                <a href="charts.html">
+                    <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
+                        <div class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
+                            <i class="fas fa-chart-pie mr-3"></i><span>Charts</span>
+                        </div>
+                    </li>
+                </a>
+                <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
+                    <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
+                        <i class="fas fa-puzzle-piece mr-3"></i>
+                        <div class="inline-block w-3/4">Components</div>
+                        <span class="overflow-hidden">
+                            <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
+                        </span>
+                    </div>
+                    <ul class="hidden bg-gray-200 rounded-lg px-2.5 my-2 h-full truncate">
+                        <a href="theme.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Theme</span>
+                            </li>
+                        </a>
+                        <a href="button.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Buttons</span>
+                            </li>
+                        </a>
+                        <a href="modalsalerts.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Modals & Alerts</span>
+                            </li>
+                        </a>
+                        <a href="cards.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Cards</span>
+                            </li>
+                        </a>
+                        <a href="forms.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Forms</span>
+                            </li>
+                        </a>
+                        <a href="tables.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Tables</span>
+                            </li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
+                    <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
+                        <i class="fas fa-window-maximize mr-3"></i>
+                        <div class="inline-block w-3/4">Pages</div>
+                        <span class="overflow-hidden">
+                            <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
+                        </span>
+                    </div>
+                    <ul class="hidden bg-gray-200 rounded-lg px-2.5 my-2 h-full truncate">
+                        <a href="login.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Login</span>
+                            </li>
+                        </a>
+                        <a href="register.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Register</span>
+                            </li>
+                        </a>
+                        <a href="errors.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Errors</span>
+                            </li>
+                        </a>
+                        <a href="searchs.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Searchs</span>
+                            </li>
+                        </a>
+                    </ul>
+                </li>
+                <li class="py-0.5 my-1 rounded-xl overflow-hidden truncate">
+                    <div onclick="DropDown()" class="bg-gray-100 hover:bg-gray-200 px-2 pt-1 rounded-lg">
+                        <i class="fas fa-hand-holding-heart mr-3"></i>
+                        <div class="inline-block w-3/4">Example</div>
+                        <span class="overflow-hidden">
+                            <i class="my-auto fas fa-chevron-right transition-all duration-500 transform"></i>
+                        </span>
+                    </div>
+                    <ul class="hidden bg-gray-200 rounded-lg px-2.5 my-2 h-full truncate">
+                        <a href="blog.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Blog</span>
+                            </li>
+                        </a>
+                        <a href="hero.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Hero</span>
+                            </li>
+                        </a>
+                        <a href="mailbox.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Mailbox</span>
+                            </li>
+                        </a>
+                        <a href="calendars.html">
+                            <li onclick="DropDownItem()" class="my-1 cursor-pointer">
+                                <div class="ml-1 mr-5 w-2 h-2 inline-block rounded-full ring ring-gray-800 ring-offset-2"></div>
+                                <span>Calendar</span>
+                            </li>
+                        </a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="bodycontent" class="transition-all duration-300 ease-in-out w-full md:ml-11 lg:ml-80">
+        <nav class="bg-gray-200">
+            <div class="px-5">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <button onclick="Collapsed()" class="text-gray-800">
+                                <svg class="block h-6 w-6"
+                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="ml-4 flex items-center md:ml-6">
+                            <div class="relative">
+                                <div>
+                                    <button
+                                            class="bg-gray-300 p-1 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                        <span class="sr-only">View notifications</span>
+                                        <!-- Heroicon name: outline/bell -->
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                             viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id="menuProfile"
+                                     class="hidden absolute bg-white right-0 w-56 md:w-80 rounded-xl shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                                     tabindex="-1">
+                                    <div class="grid grid-rows-4 divide-y">
+                                        <a href="#" class="block px-4 py-2 text-xs md:text-sm text-gray-700"
+                                           role="menuitem" tabindex="-1" id="user-menu-item-0">
+                                            <div class="flex">
+                                                <img class="h-8 w-8 mr-2 md:mr-4 my-auto rounded-full"
+                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                     alt="">
+                                                <div>
+                                                    <h1 class="font-bold">Jane Doe sent a massage</h1>
+                                                    <div class="bg-gray-100 rounded-xl p-2 py-1">
+                                                        <p class="h-8 md:h-16 overflow-hidden"> Hello, My name is Jane
+                                                            doe i want to asking about this tamplate, how i can order
+                                                            it? </p>
+                                                        <span class="mx-2 font-bold">- 1h ago -</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="block px-4 py-2 text-xs md:text-sm text-gray-700"
+                                           role="menuitem" tabindex="-1" id="user-menu-item-0">
+                                            <div class="flex">
+                                                <img class="h-8 w-8 mr-2 md:mr-4 my-auto rounded-full"
+                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                     alt="">
+                                                <div>
+                                                    <h1 class="font-bold">Jane Doe sent a massage</h1>
+                                                    <div class="bg-gray-100 rounded-xl p-2 py-1">
+                                                        <p class="h-8 md:h-16 overflow-hidden"> Hello, My name is Jane
+                                                            doe i want to asking about this tamplate, how i can order
+                                                            it? </p>
+                                                        <span class="mx-2 font-bold">- 1h ago -</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="block px-4 py-2 text-xs md:text-sm text-gray-700"
+                                           role="menuitem" tabindex="-1" id="user-menu-item-0">
+                                            <div class="flex">
+                                                <img class="h-8 w-8 mr-2 md:mr-4 my-auto rounded-full"
+                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                     alt="">
+                                                <div>
+                                                    <h1 class="font-bold">Jane Doe sent a massage</h1>
+                                                    <div class="bg-gray-100 rounded-xl p-2 py-1">
+                                                        <p class="h-8 md:h-16 overflow-hidden"> Hello, My name is Jane
+                                                            doe i want to asking about this tamplate, how i can order
+                                                            it? </p>
+                                                        <span class="mx-2 font-bold">- 1h ago -</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="block px-4 py-2 text-xs md:text-sm text-gray-700"
+                                           role="menuitem" tabindex="-1" id="user-menu-item-0">
+                                            <div class="flex">
+                                                <img class="h-8 w-8 mr-2 md:mr-4 my-auto rounded-full"
+                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                     alt="">
+                                                <div>
+                                                    <h1 class="font-bold">Jane Doe sent a massage</h1>
+                                                    <div class="bg-gray-100 rounded-xl p-2 py-1">
+                                                        <p class="h-8 md:h-16 overflow-hidden"> Hello, My name is Jane
+                                                            doe i want to asking about this tamplate, how i can order
+                                                            it? </p>
+                                                        <span class="mx-2 font-bold">- 1h ago -</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="mt-2 cursor-pointer bg-gray-800 text-white text-center rounded-b-xl">
+                                        More Notification
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Profile dropdown -->
+                            <div class="ml-3 relative">
+                                <div>
+                                    <button type="button"
+                                            class="max-w-xs p-0.5 bg-gray-300 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                            aria-expanded="false" aria-haspopup="true">
+                                        <span class="sr-only">Open user menu</span>
+                                        <img class="h-8 w-8 rounded-full"
+                                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                             alt="">
+                                    </button>
+                                </div>
+                                <div id="menuProfile"
+                                     class="hidden absolute right-0 w-32 rounded-xl shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                                     tabindex="-1">
+                                    <!-- Active: "bg-gray-100", Not Active: "" -->
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                       tabindex="-1" id="user-menu-item-0">Your Profile</a>
+
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                       tabindex="-1" id="user-menu-item-1">Settings</a>
+
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                       tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="min-h-screen px-10 py-5">
+            <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-x-5 gap-y-5 my-5">
+                <div class="md:col-span-3 bg-gray-100 shadow-md text-gray-800 rounded-xl flex">
+                    <div class="w-1/3 text-4xl p-5">
+                        <i class="bg-purple-500 text-white rounded-full px-5 py-4 fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="w-2/3 ml-10 my-auto">
+                        <span class="text-4xl">236</span>
+                        <div class="-mt-3 text-lg">Orders<i class="mx-2 text-green-500 fas fa-caret-up"></i></div>
+                    </div>
+                </div>
+                <div class="md:col-span-3 bg-gray-100 shadow-md text-gray-800 rounded-xl flex">
+                    <div class="w-1/3 text-4xl p-5">
+                        <i class="bg-green-500 text-white rounded-full px-3 py-4 fas fa-users"></i>
+                    </div>
+                    <div class="w-2/3 ml-10 my-auto">
+                        <span class="text-4xl">56</span>
+                        <div class="-mt-3 text-lg">Users<i class="mx-2 text-green-500 fas fa-caret-up"></i></div>
+                    </div>
+                </div>
+                <div class="md:col-span-3 bg-gray-100 shadow-md text-gray-800 rounded-xl flex">
+                    <div class="w-1/3 text-4xl p-5">
+                        <i class="bg-blue-500 text-white rounded-full px-4 py-4 fas fa-envelope"></i>
+                    </div>
+                    <div class="w-2/3 ml-10 my-auto">
+                        <span class="text-4xl">12</span>
+                        <div class="-mt-3 text-lg">Emails<i
+                                class="mx-2 text-red-500 fas fa-caret-up transform rotate-180"></i></div>
+                    </div>
+                </div>
+                <div class="md:col-span-3 bg-gray-100 shadow-md text-gray-800 rounded-xl flex">
+                    <div class="w-1/3 text-4xl p-5">
+                        <i class="bg-yellow-500 text-white rounded-full px-3.5 py-4 fas fa-id-card-alt"></i>
+                    </div>
+                    <div class="w-2/3 ml-10 my-auto">
+                        <span class="text-4xl">36</span>
+                        <div class="-mt-3 text-lg">Subscribers<i class="mx-2 text-green-500 fas fa-caret-up"></i></div>
+                    </div>
+                </div>
+                <div class="transition-all h-full duration-500 ease-in-out transform scale-100 row-span-2 md:col-span-4 lg:col-span-8 bg-gray-200 rounded-t-xl rounded-b-md shadow-md overflow-hidden">
+                    <button onclick="closeit()" class="ml-1.5 mt-1.5 w-3 h-3 bg-red-500 rounded-full"></button>
+                    <button onclick="minimise()" class="mt-1.5 w-3 h-3 bg-yellow-500 rounded-full"></button>
+                    <button onclick="maximise()" class="mt-1.5 w-3 h-3 bg-green-500 rounded-full"></button>
+                    Chart | AreaCharts
+                    <div class="content bg-gray-100 px-2 py-2">
+                        <div class="hidden md:block">
+                            <canvas id="AreaCharts" height="100"></canvas>
+                        </div>
+                        <div class="md:hidden">
+                            <canvas id="AreaChartsMobile" height="300"></canvas>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
+                            <div class="bg-purple-500 shadow-md text-white rounded-xl flex">
+                                <div class="hidden lg:block w-1/3 text-5xl p-5">
+                                    <i class="bg-white text-purple-500 rounded-full px-5 py-4 fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="w-2/3 ml-10 lg:ml-5 my-auto">
+                                    <span class="text-5xl md:text-3xl">36</span>
+                                    <div class="-mt-3 text-xl md:text-base">Today Orders</div>
+                                </div>
+                            </div>
+                            <div class="bg-green-400 shadow-md text-white rounded-xl flex">
+                                <div class="hidden lg:block w-1/3 text-5xl p-5">
+                                    <i class="bg-white text-green-400 rounded-full px-3 py-4 fas fa-users"></i>
+                                </div>
+                                <div class="w-2/3 ml-10 lg:ml-5 my-auto">
+                                    <span class="text-5xl md:text-3xl">10</span>
+                                    <div class="-mt-3 text-xl md:text-base">Today Users</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="transition-all h-full duration-500 ease-in-out transform scale-100 row-span-2 md:col-span-2 lg:col-span-4 bg-gray-200 rounded-t-xl rounded-b-md shadow-md overflow-hidden">
+                    <button onclick="closeit()" class="ml-1.5 mt-1.5 w-3 h-3 bg-red-500 rounded-full"></button>
+                    <button onclick="minimise()" class="mt-1.5 w-3 h-3 bg-yellow-500 rounded-full"></button>
+                    <button onclick="maximise()" class="mt-1.5 w-3 h-3 bg-green-500 rounded-full"></button>
+                    Chart | DoughnutCharts
+                    <div class="content h-full bg-gray-100 px-2 py-2">
+                        <canvas id="DonutCharts"></canvas>
+                    </div>
+                </div>
+                <div class="transition-all h-full duration-500 ease-in-out transform scale-100 md:col-span-3 lg:col-span-6 bg-gray-200 rounded-t-xl rounded-b-md shadow-md overflow-hidden">
+                    <button onclick="closeit()" class="ml-1.5 mt-1.5 w-3 h-3 bg-red-500 rounded-full"></button>
+                    <button onclick="minimise()" class="mt-1.5 w-3 h-3 bg-yellow-500 rounded-full"></button>
+                    <button onclick="maximise()" class="mt-1.5 w-3 h-3 bg-green-500 rounded-full"></button>
+                    Active Members
+                    <div class="content grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 h-full bg-gray-100 px-2 py-5 pb-7">
+                        <div class="text-center">
+                            <img class="h-8 w-8 rounded-full mx-auto"
+                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                 alt="">
+                            <h1>Jane Doe</h1>
+                            <div class="px-6">
+                                <h4 class="text-xs bg-indigo-200 rounded-full pt-0.5">1h Ago</h4>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <img class="h-8 w-8 rounded-full mx-auto"
+                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                 alt="">
+                            <h1>Jane Doe</h1>
+                            <div class="px-6">
+                                <h4 class="text-xs bg-indigo-200 rounded-full pt-0.5">1h Ago</h4>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <img class="h-8 w-8 rounded-full mx-auto"
+                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                 alt="">
+                            <h1>Jane Doe</h1>
+                            <div class="px-6">
+                                <h4 class="text-xs bg-indigo-200 rounded-full pt-0.5">1h Ago</h4>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <img class="h-8 w-8 rounded-full mx-auto"
+                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                 alt="">
+                            <h1>Jane Doe</h1>
+                            <div class="px-6">
+                                <h4 class="text-xs bg-indigo-200 rounded-full pt-0.5">1h Ago</h4>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <img class="h-8 w-8 rounded-full mx-auto"
+                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                 alt="">
+                            <h1>Jane Doe</h1>
+                            <div class="px-6">
+                                <h4 class="text-xs bg-indigo-200 rounded-full pt-0.5">1h Ago</h4>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <img class="h-8 w-8 rounded-full mx-auto"
+                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                 alt="">
+                            <h1>Jane Doe</h1>
+                            <div class="px-6">
+                                <h4 class="text-xs bg-indigo-200 rounded-full pt-0.5">1h Ago</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="transition-all h-full duration-500 ease-in-out transform scale-100 md:col-span-3 lg:col-span-6 row-span-2 bg-gray-200 rounded-t-xl rounded-b-md shadow-md overflow-hidden">
+                    <button onclick="closeit()" class="ml-1.5 mt-1.5 w-3 h-3 bg-red-500 rounded-full"></button>
+                    <button onclick="minimise()" class="mt-1.5 w-3 h-3 bg-yellow-500 rounded-full"></button>
+                    <button onclick="maximise()" class="mt-1.5 w-3 h-3 bg-green-500 rounded-full"></button>
+                    Lastest Orders
+                    <div class="content text-center bg-gray-100 rounded-b-xl pt-5">
+                        <table class="table-fixed w-full h-full text-xs md:text-base">
+                            <thead class="border-b-4">
+                            <tr>
+                                <th>Order Id</th>
+                                <th>Item</th>
+                                <th>Status</th>
+                                <th>Experience & Review</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="border-b-2 border-gray-200 h-10">
+                                <td><a class="text-blue-500" href="#">OR9842</a></td>
+                                <td class="truncate">Template E-Commerce + Pro</td>
+                                <td><span class="bg-green-500 px-2 py-0.5 text-white rounded-full">Success</span></td>
+                                <td>5</td>
+                            </tr>
+                            <tr class="border-b-2 border-gray-200 h-10">
+                                <td><a class="text-blue-500" href="#">OR9842</a></td>
+                                <td>Adam</td>
+                                <td><span class="bg-yellow-500 px-2 py-0.5 text-white rounded-full">Pending</span></td>
+                                <td>5</td>
+                            </tr>
+                            <tr class="border-b-2 border-gray-200 h-10">
+                                <td><a class="text-blue-500" href="#">OR9842</a></td>
+                                <td>Adam</td>
+                                <td><span class="bg-red-500 px-2 py-0.5 text-white rounded-full">Expired</span></td>
+                                <td>5</td>
+                            </tr>
+                            <tr class="border-b-2 border-gray-200 h-10">
+                                <td><a class="text-blue-500" href="#">OR9842</a></td>
+                                <td>Adam</td>
+                                <td><span class="bg-blue-500 px-2 py-0.5 text-white rounded-full">Processing</span></td>
+                                <td>5</td>
+                            </tr>
+                            <tr class="border-b-2 border-gray-200 h-10">
+                                <td><a class="text-blue-500" href="#">OR9842</a></td>
+                                <td>Adam</td>
+                                <td><span class="bg-green-500 px-2 py-0.5 text-white rounded-full">Success</span></td>
+                                <td>5</td>
+                            </tr>
+                            <tr class="border-b-2 border-gray-200 h-10">
+                                <td><a class="text-blue-500" href="#">OR9842</a></td>
+                                <td>Adam</td>
+                                <td><span class="bg-red-500 px-2 py-0.5 text-white rounded-full">Expired</span></td>
+                                <td>5</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="w-full bg-gray-600 text-white rounded-b-xl">
+                            <button class=w-full>View All Orders</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="transition-all h-full duration-500 ease-in-out transform scale-100 md:col-span-6 row-span-2 bg-gray-200 rounded-t-xl rounded-b-md shadow-md overflow-hidden">
+                    <button onclick="closeit()" class="ml-1.5 mt-1.5 w-3 h-3 bg-red-500 rounded-full"></button>
+                    <button onclick="minimise()" class="mt-1.5 w-3 h-3 bg-yellow-500 rounded-full"></button>
+                    <button onclick="maximise()" class="mt-1.5 w-3 h-3 bg-green-500 rounded-full"></button>
+                    Calendar
+                    <div class="content h-full bg-gray-100 px-2 py-5 pb-5 text-center">
+                        <span class="text-6xl text-gray-400">Coming Soon Calendar Feature</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Header -->
+<!-- Footer -->
+<footer id="footer" class="transition-all duration-200 bg-gray-800 px-10 py-5 text-white md:ml-11 lg:ml-80">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 border-b-2 gap-y-10 md:gap-y-0 md:gap-x-10  border-gray-600 pb-10">
+        <div class="text-lg font-light">
+            <h1 class="mb-4 font-medium uppercase">Solutions</h1>
+            <ul class="list-none text-gray-300">
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Marketing</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Analytics</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Commerce</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Insights</li>
+            </ul>
+        </div>
+        <div class="text-lg font-light">
+            <h1 class="mb-4 font-medium uppercase">Company</h1>
+            <ul class="list-none text-gray-300">
+                <li class="my-1 hover:text-gray-50 cursor-pointer">About</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Blog</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Careers</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Clients</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Partners</li>
+            </ul>
+        </div>
+        <div class="text-lg font-light">
+            <h1 class="mb-4 font-medium uppercase">Support</h1>
+            <ul class="list-none text-gray-300">
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Pricing</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Documentation</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Guides</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">API Product</li>
+            </ul>
+        </div>
+        <div class="text-lg font-light">
+            <h1 class="mb-4 font-medium uppercase">Legal</h1>
+            <ul class="list-none text-gray-300">
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Claim</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Privacy</li>
+                <li class="my-1 hover:text-gray-50 cursor-pointer">Terms</li>
+            </ul>
+        </div>
+        <div class="col-span-2 md:col-span-3 lg:col-span-2 text-lg font-light">
+            <h1 class="mb-4 font-medium uppercase">Subscribe to our Newsletter</h1>
+            <p class="text-sm text-gray-300 my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+                dolorum sit soluta accusamus dolores est quisquam voluptatum magni nobis</p>
+            <form>
+                <input class="border border-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent px-4 py-1 text-gray-800 mr-1"
+                       placeholder="Your Email">
+                <button class="bg-gray-600 hover:bg-pink-500 text-white rounded-xl focus:outline-none focus:ring-2 px-2 py-1 mt-2 sm:mt-0">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="text-center md:text-left my-2">
+        <span class="text-sm mr-1">Made with <i class="text-red-600 fas fa-heart"></i> by <a
+                href="https://www.instagram.com/ricko.tiaka/" target="_blank">ricko.tiaka</a></span>
+        <div class="md:float-right">
+            <button>
+                <img class="w-7 h-7 mx-1" src="https://img.icons8.com/ios-filled/500/ffffff/facebook-new.png"/>
+            </button>
+            <button>
+                <img class="w-7 h-7 mx-1"
+                     src="https://img.icons8.com/material-outlined/480/ffffff/instagram-new--v1.png"/>
+            </button>
+            <button>
+                <img class="w-7 h-7 mx-1" src="https://img.icons8.com/material-outlined/480/ffffff/globe--v2.png"/>
+            </button>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+</body>
+</html>
+<script src="../public/js/rdev.js"></script>
+
+<!--charts-->
+
+<script>
+    var AreaCharts = new Chart(document.getElementById('AreaCharts'), {
+        type: 'line',
+        data: {
+            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            datasets: [
+                {
+                    fill: {
+                        target: 'origin',
+                        above: 'rgba(0,224,7,0.5)',
+                        below: 'rgb(0,224,7)'
+                    },
+                    label: 'Users',
+                    data: [12, 19, 3, 5, 7, 3, 15],
+                    backgroundColor: [
+                        'rgba(0,224,7,0.5)',
+                    ],
+                    borderColor: [
+                        'rgba(0,224,7,1)',
+                    ],
+                    borderWidth: 2,
+                    tension: 0.5,
+                },
+                {
+                    fill: {
+                        target: 'origin',
+                        above: 'rgba(147,83,255,0.5)',
+                        below: 'rgb(147,83,255)'
+                    },
+                    label: 'Orders',
+                    data: [5, 8, 23, 4, 12, 13, 15],
+                    backgroundColor: [
+                        'rgba(147,83,255, 0.5)',
+                    ],
+                    borderColor: [
+                        'rgb(147,83,255)',
+                    ],
+                    borderWidth: 2,
+                    tension: 0.5,
+                },
+            ]
+        },
+        options: {
+            scales: {
+                xAxes: {
+                    display: true,
+                },
+                yAxes: {
+                    display: true,
+                }
+            },
+            plugins: {
+                filler: {
+                    propagate: true
+                }
+            },
+            responsive: true,
+            showLine: true
+        },
+    });
+
+    var AreaChartsMobile = new Chart(document.getElementById('AreaChartsMobile'), {
+        type: 'line',
+        data: {
+            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            datasets: [
+                {
+                    fill: {
+                        target: 'origin',
+                        above: 'rgba(0,224,7,0.5)',
+                        below: 'rgb(0,224,7)'
+                    },
+                    label: 'Users',
+                    data: [12, 19, 3, 5, 7, 3, 15],
+                    backgroundColor: [
+                        'rgba(0,224,7,0.5)',
+                    ],
+                    borderColor: [
+                        'rgba(0,224,7,1)',
+                    ],
+                    borderWidth: 2,
+                    tension: 0.5,
+                },
+                {
+                    fill: {
+                        target: 'origin',
+                        above: 'rgba(147,83,255,0.5)',
+                        below: 'rgb(147,83,255)'
+                    },
+                    label: 'Orders',
+                    data: [5, 8, 23, 4, 12, 13, 15],
+                    backgroundColor: [
+                        'rgba(147,83,255, 0.5)',
+                    ],
+                    borderColor: [
+                        'rgb(147,83,255)',
+                    ],
+                    borderWidth: 2,
+                    tension: 0.5,
+                },
+            ]
+        },
+        options: {
+            scales: {
+                xAxes: {
+                    display: true,
+                },
+                yAxes: {
+                    display: true,
+                }
+            },
+            plugins: {
+                filler: {
+                    propagate: true
+                }
+            },
+            responsive: true,
+            showLine: true
+        },
+    });
+
+    var DonutCharts = new Chart(document.getElementById('DonutCharts'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Google', 'Firefox', 'Edge', 'Opera', 'Safari'],
+            datasets: [
+                {
+                    label: 'Users',
+                    data: [140, 90, 120, 60, 40],
+                    backgroundColor: [
+                        'rgb(224,149,0)',
+                        'rgb(224,90,0)',
+                        'rgb(0,198,224)',
+                        'rgb(224,18,18)',
+                        'rgb(0,224,179)',
+                    ],
+                    borderWidth: 0,
+                    tension: 0.5,
+                },
+            ]
+        },
+        options: {
+            plugins: {
+                filler: {
+                    propagate: true
+                }
+            },
+            showLine: true,
+        },
+    });
+</script>

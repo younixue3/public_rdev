@@ -1,0 +1,20 @@
+{
+  "name": "companyprofile_2_html",
+  "version": "1.0.0",
+  "description": "Company Profile HTML, TailwindCss, JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss build -i ./src/css/style.css -o ./public/css/tailwind.css",
+    "pack": "webpack"
+  },
+  "author": "Ricko Tiaka",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "chart.js": "^3.5.0",
+    "tailwindcss": "^2.2.7",
+    "webpack": "^5.47.1"
+  }
+}
